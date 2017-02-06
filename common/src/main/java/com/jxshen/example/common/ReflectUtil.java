@@ -4,6 +4,7 @@ import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
+import java.lang.reflect.WildcardType;
 
 public class ReflectUtil {
     
@@ -22,7 +23,7 @@ public class ReflectUtil {
         if (genericClass instanceof GenericArrayType) {
             return (Class<?>) ((GenericArrayType) genericClass).getGenericComponentType();
         }
-        //泛型擦拭对象
+        //泛型类型 T K V等
         if (genericClass instanceof TypeVariable) {
             return (Class<?>) ((TypeVariable<?>) genericClass).getGenericDeclaration();
         }
@@ -34,4 +35,31 @@ public class ReflectUtil {
 //            
 //        }
 //    }
+    
+    //获取泛型类中的实际泛型参数
+    public static Type getActualType(Type genericType) {
+        if (genericType == null) {
+            return null;
+        }
+        if (genericType instanceof ParameterizedType) { //如果是泛型类
+            ParameterizedType pType = (ParameterizedType) genericType;
+            Type actualType = pType.getActualTypeArguments()[0];
+            
+            if (actualType instanceof TypeVariable) { //泛型对象 T
+                TypeVariable<?> typeVariable = (TypeVariable<?>) actualType;
+                return typeVariable;
+            }
+            
+            if (actualType instanceof WildcardType) { //通配符?类型
+                WildcardType wildcardType = (WildcardType) actualType;
+                return wildcardType;
+            }
+            
+            if (actualType instanceof Class) {  //普通类型对象
+                Class<?> clazz = (Class<?>) actualType;
+                return clazz;
+            }
+        }
+        return genericType;
+    }
 }
