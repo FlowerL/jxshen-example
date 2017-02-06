@@ -1,4 +1,4 @@
-package com.jxshen.example.reflect;
+package com.jxshen.example.reflect.test;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
@@ -8,8 +8,9 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import com.jxshen.example.reflect.OuterClass.InnerClass;
-import com.jxshen.example.reflect.OuterClass.InnerInterface;
+import com.jxshen.example.reflect.clazz.OuterClass;
+import com.jxshen.example.reflect.clazz.OuterClass.InnerClass;
+import com.jxshen.example.reflect.clazz.OuterClass.InnerInterface;
 
 public class OuterClassTest {
 

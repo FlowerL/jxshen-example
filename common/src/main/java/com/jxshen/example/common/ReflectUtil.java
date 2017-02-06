@@ -41,7 +41,7 @@ public class ReflectUtil {
         if (genericType == null) {
             return null;
         }
-        if (genericType instanceof ParameterizedType) { //如果是泛型类
+        if (genericType instanceof ParameterizedType) { //泛型参数类型
             ParameterizedType pType = (ParameterizedType) genericType;
             Type actualType = pType.getActualTypeArguments()[0];
             
@@ -59,6 +59,14 @@ public class ReflectUtil {
                 Class<?> clazz = (Class<?>) actualType;
                 return clazz;
             }
+        } else if (genericType instanceof GenericArrayType) { //泛型数组类型 T[]
+            GenericArrayType genericArrayType = (GenericArrayType) genericType;
+//            Type genericComponentType = genericArrayType.getGenericComponentType();
+            return genericArrayType;
+        } else if (genericType instanceof TypeVariable) {   //泛型变量
+            return genericType;
+        } else if (genericType instanceof Class) {  //普通类型
+            return genericType;
         }
         return genericType;
     }

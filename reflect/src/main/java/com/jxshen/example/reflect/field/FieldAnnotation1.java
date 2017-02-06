@@ -1,4 +1,4 @@
-package com.jxshen.example.reflect;
+package com.jxshen.example.reflect.field;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

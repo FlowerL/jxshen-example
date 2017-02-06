@@ -1,4 +1,4 @@
-package com.jxshen.example.reflect;
+package com.jxshen.example.reflect.test;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -8,6 +8,7 @@ import java.util.Arrays;
 import org.junit.Test;
 
 import com.jxshen.example.common.ReflectUtil;
+import com.jxshen.example.reflect.field.FieldObject;
 
 public class FieldObjectTest {
 

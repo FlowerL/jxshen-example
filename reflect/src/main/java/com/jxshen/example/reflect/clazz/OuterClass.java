@@ -1,4 +1,4 @@
-package com.jxshen.example.reflect;
+package com.jxshen.example.reflect.clazz;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
