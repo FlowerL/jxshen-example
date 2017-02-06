@@ -10,7 +10,8 @@
 	<modules>
 		<module>event-driven</module>
 		<module>common</module>
-	</modules>
+    <module>reflect</module>
+  </modules>
 	
 	<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
