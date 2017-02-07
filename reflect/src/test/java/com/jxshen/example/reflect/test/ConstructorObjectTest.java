@@ -50,8 +50,13 @@ public class ConstructorObjectTest {
         //获得构造函数参数的Class类型
         Class<?>[] parameterTypes = constructor.getParameterTypes();
         System.out.println("The parameter types of constructor are : " + Arrays.toString(parameterTypes));
+        
         //获得构造函数参数的Type类型
         Type[] genericParameterTypes = constructor.getGenericParameterTypes();
         System.out.println("The generic parameter types of constructor are : " + Arrays.toString(genericParameterTypes));
+        
+        for (Type type : genericParameterTypes) {
+            
+        }
     }
 }
