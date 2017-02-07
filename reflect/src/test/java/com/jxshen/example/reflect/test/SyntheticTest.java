@@ -4,6 +4,8 @@ import java.lang.reflect.Method;
 
 import org.junit.Test;
 
+import com.jxshen.example.reflect.compile.SyntheticObject;
+
 public class SyntheticTest {
 
     @Test
@@ -17,6 +19,12 @@ public class SyntheticTest {
                 System.out.println("name = " + method.getName());
             }
         }
+    }
+    
+    @Test
+    public void doTest2() {
+        System.out.println("doTest2:");
+        SyntheticObject.doRun();
     }
 }
 

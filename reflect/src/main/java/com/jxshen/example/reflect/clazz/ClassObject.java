@@ -37,5 +37,12 @@ public class ClassObject {
      */
     private static void privateStaticMethod(String param){}
     
-//    public static class 
+    public static class Father<T> implements ClassInterface1{
+        public class FatherInnerClass{} //father内部类(非静态，会有指向父类的指针)
+    }
+    
+    public static class Child<T,E> extends Father<T> implements ClassInterface2<T>, ClassInterface3 {
+        public class ChildInnerClass{} //Child内部类(非静态，会有指向父类的指针)
+    }
+    
 }
