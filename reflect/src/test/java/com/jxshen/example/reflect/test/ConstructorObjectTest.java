@@ -5,11 +5,13 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
 
+import com.jxshen.example.common.ReflectUtil;
 import com.jxshen.example.reflect.constructor.ConstructorObject;
 
 public class ConstructorObjectTest {
@@ -56,7 +58,25 @@ public class ConstructorObjectTest {
         System.out.println("The generic parameter types of constructor are : " + Arrays.toString(genericParameterTypes));
         
         for (Type type : genericParameterTypes) {
-            
+            System.out.println("constructor generic paremeter's actual type is  " + ReflectUtil.getActualType(type));
         }
+        
+        //获取构造函数参数上的注解
+        Annotation[][] parameterAnnotations = constructor.getParameterAnnotations();
+        System.out.println("The annotations on parameters are : " + Arrays.deepToString(parameterAnnotations));
+        
+        //获取方法抛出的异常，Class类型
+        Class<?>[] exceptionTypes = constructor.getExceptionTypes();
+        System.out.println("The exception types are : " + Arrays.toString(exceptionTypes));
+        
+        //获取方法抛出的异常，Type类型(泛型)
+        Type[] genericExceptionTypes = constructor.getGenericExceptionTypes();
+        System.out.println("The exception types are : " + Arrays.toString(genericExceptionTypes));
+        
+        //调用私有构造函数必须先设置accessible为true
+        constructor.setAccessible(true);
+        
+        //调用带参构造函数构造实例
+        constructor.newInstance(new ArrayList<String>(), new Integer[3]);
     }
 }
