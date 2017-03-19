@@ -10,7 +10,8 @@
 	<modules>
 		<module>event-driven</module>
 		<module>common</module>
-    <module>reflect</module>
+        <module>reflect</module>
+        <module>concurrent</module>
   </modules>
 	
 	<properties>
