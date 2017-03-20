@@ -21,8 +21,8 @@ public abstract class AbstractEventListener<T extends EventInterf> implements Ev
             return clazz.equals(event.getClass());
         } 
         else {
-//            Class<?> clazz = (Class<?>)listenerSuperType;
-            return false;
+            Class<?> clazz = (Class<?>)listenerSuperType;
+            return clazz.equals(event.getClass());
         }
     }
 
