@@ -12,7 +12,8 @@
 		<module>common</module>
         <module>reflect</module>
         <module>concurrent</module>
-    </modules>
+    <module>design-model</module>
+  </modules>
 	
 	<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
