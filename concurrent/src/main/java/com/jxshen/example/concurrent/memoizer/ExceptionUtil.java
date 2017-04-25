@@ -1,4 +1,4 @@
-package com.jxshen.example.concurrent.Memoizer;
+package com.jxshen.example.concurrent.memoizer;
 
 public class ExceptionUtil {
 

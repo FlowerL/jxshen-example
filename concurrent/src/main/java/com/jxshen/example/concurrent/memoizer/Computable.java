@@ -1,4 +1,4 @@
-package com.jxshen.example.concurrent.Memoizer;
+package com.jxshen.example.concurrent.memoizer;
 
 /**
  * reference from : Java Concurrent In Practice

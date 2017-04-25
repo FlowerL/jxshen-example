@@ -1,4 +1,4 @@
-package com.jxshen.example.concurrent.Memoizer;
+package com.jxshen.example.concurrent.memoizer;
 
 import java.util.HashMap;
 import java.util.Map;
