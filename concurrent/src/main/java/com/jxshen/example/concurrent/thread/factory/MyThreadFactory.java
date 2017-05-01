@@ -2,6 +2,8 @@ package com.jxshen.example.concurrent.thread.factory;
 
 import java.util.concurrent.ThreadFactory;
 
+import com.jxshen.example.concurrent.thread.MyAppThread;
+
 public class MyThreadFactory implements ThreadFactory {
 
     private String poolName;
@@ -13,7 +15,7 @@ public class MyThreadFactory implements ThreadFactory {
 
     @Override
     public Thread newThread(Runnable r) {
-        return null;
+        return new MyAppThread(r, poolName);
     }
 
 }
