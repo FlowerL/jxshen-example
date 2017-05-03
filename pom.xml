@@ -12,7 +12,7 @@
 		<module>common</module>
         <module>reflect</module>
         <module>concurrent</module>
-    <module>design-model</module>
+        <module>design-model</module>
   </modules>
 	
 	<properties>
