@@ -10,10 +10,11 @@
 	<modules>
 		<module>event-driven</module>
 		<module>common</module>
-        <module>reflect</module>
-        <module>concurrent</module>
-        <module>design-model</module>
-  </modules>
+		<module>reflect</module>
+		<module>concurrent</module>
+		<module>design-model</module>
+		<module>nio</module>
+	</modules>
 	
 	<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
