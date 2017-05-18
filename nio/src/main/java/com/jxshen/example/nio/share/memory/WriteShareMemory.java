@@ -7,7 +7,7 @@ import java.nio.channels.FileChannel.MapMode;
 
 /**
  * reference from: http://blog.csdn.net/flyingpig4/article/details/5747551<br>
- * the first byte of file indicate read-write<br>
+ * the first byte of file indicate readable-writable<br>
  * 0-writable, 1-writing, 3-readable<br>
  * the second byte of file indicate the position
  */
@@ -23,7 +23,7 @@ public class WriteShareMemory {
             MappedByteBuffer mbb = fc.map(MapMode.READ_WRITE, 0, SIZE);
             
             // clear file
-            for (int i = 0; i < SIZE; i ++) {
+            for (int i = 0; i < SIZE; i++) {
                 mbb.put(i, (byte)0);
             }
             // from the third byte of file, write A-Z sequently, the second byte indicate current operate position
