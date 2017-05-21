@@ -11,6 +11,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * reference from: http://www.importnew.com/19816.html
+ */
 public class ServerClientExample {
 
     public void NioClient() {
