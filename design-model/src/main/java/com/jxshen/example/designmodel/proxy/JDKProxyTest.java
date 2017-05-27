@@ -7,11 +7,12 @@ import java.lang.reflect.Proxy;
 /**
  * Integration for proxy model
  */
-public class ProxyModelTest {
+public class JDKProxyTest {
 
     // public interface for target and proxy
     public static interface Singable {
         void sing();
+        void dance();
     }
     
     // target1
@@ -19,6 +20,10 @@ public class ProxyModelTest {
         @Override
         public void sing() {
             System.out.println("High Singer called to sing");
+        }
+        @Override
+        public void dance() {
+            System.out.println("High Singer called to dance");
         }
     }
     
@@ -28,6 +33,10 @@ public class ProxyModelTest {
         public void sing() {
             System.out.println("Low Singer called to sing");
         }
+        @Override
+        public void dance() {
+            System.out.println("Low Singer called to dance");
+        }
     }
     
     // target3
@@ -35,6 +44,10 @@ public class ProxyModelTest {
         @Override
         public void sing() {
             System.out.println("Middle Singer called to sing");
+        }
+        @Override
+        public void dance() {
+            System.out.println("Middle Singer called to dance");
         }
     }
     
@@ -57,9 +70,9 @@ public class ProxyModelTest {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            System.out.println("SingHandler Called Start");
+            System.out.println("proxy Start");
             method.invoke(target, args);
-            System.out.println("SingHandler Called End");
+            System.out.println("proxy End");
             return null;
         }
     }
@@ -92,5 +105,9 @@ public class ProxyModelTest {
         highSingerProxy.sing();
         lowSingerProxy.sing();
         middleSingerProxy.sing();
+        
+        highSingerProxy.dance();
+        lowSingerProxy.dance();
+        middleSingerProxy.dance();
     }
 }

@@ -13,6 +13,10 @@ public class CGLibProxyTest {
         public void sing() {
             System.out.println("target sing");
         }
+        
+        public void dance() {
+            System.out.println("target dance");
+        }
     }
     
     // Proxy
@@ -41,5 +45,6 @@ public class CGLibProxyTest {
         CGLibProxy proxy = new CGLibProxy();
         Singer singer = (Singer)proxy.getProxy(Singer.class);
         singer.sing();
+        singer.dance();
     }
 }
