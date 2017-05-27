@@ -83,6 +83,12 @@ public class ProxyModelTest {
         Singable lowSingerProxy = ProxyFactory.newProxyInstance(lowSinger);
         Singable middleSingerProxy = ProxyFactory.newProxyInstance(middleSinger);
         
+        // test if same class of target will get the only proxy
+        Singable highSinger2 = new HighSinger();
+        Singable highSingerProxy2 = ProxyFactory.newProxyInstance(highSinger2);
+        
+        System.out.println(highSingerProxy == highSingerProxy2);
+        
         highSingerProxy.sing();
         lowSingerProxy.sing();
         middleSingerProxy.sing();
