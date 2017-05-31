@@ -35,12 +35,6 @@ public class ReflectUtil {
         return (Class<?>) genericClass;
     }
 
-//    public static Class getClass(Type type, int index) {
-//        if (type instanceof ParameterizedType) {  //泛型类
-//            
-//        }
-//    }
-    
     //获取泛型类中的实际泛型参数
     public static Type getActualType(Type genericType) {
         if (genericType == null) {

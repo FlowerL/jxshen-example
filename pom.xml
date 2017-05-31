@@ -15,6 +15,7 @@
 		<module>design-model</module>
 		<module>nio</module>
 		<module>kafka</module>
+        <module>algorithm</module>
   </modules>
 	
 	<properties>
