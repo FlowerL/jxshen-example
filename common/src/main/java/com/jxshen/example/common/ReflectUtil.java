@@ -8,6 +8,11 @@ import java.lang.reflect.WildcardType;
 
 public class ReflectUtil {
     
+    // 获得当前运行函数的方法名，不包括ReflectUtil.getCurrentMethodName本身
+    public static String getCurrentMethodName() {
+        return Thread.currentThread().getStackTrace()[2].getMethodName();
+    }
+    
     public static Class<?> getGenericClass(ParameterizedType parameterizedType, int index){
         Type[] types = parameterizedType.getActualTypeArguments();
         if (types == null || index >= types.length) {
