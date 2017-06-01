@@ -13,6 +13,7 @@ public class ReflectUtil {
         return Thread.currentThread().getStackTrace()[2].getMethodName();
     }
     
+    // 获取参数化对象泛型的实际类型
     public static Class<?> getGenericClass(ParameterizedType parameterizedType, int index){
         Type[] types = parameterizedType.getActualTypeArguments();
         if (types == null || index >= types.length) {
