@@ -16,6 +16,7 @@
 		<module>nio</module>
 		<module>kafka</module>
         <module>algorithm</module>
+        <module>web</module>
   </modules>
 	
 	<properties>
