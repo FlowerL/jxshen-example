@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
+ * reference from: http://www.cnblogs.com/bigdataZJ/p/TomcatSourceZJ2.html
+ * 
  * a simple http response<br>
  */
 public class HttpResponse {

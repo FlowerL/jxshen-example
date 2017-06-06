@@ -9,6 +9,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
+ * reference from: http://www.cnblogs.com/bigdataZJ/p/TomcatSourceZJ2.html
+ * 
  * A simple HttpServer just send back static resource <br>
  */
 public class HttpServer {
@@ -73,15 +75,17 @@ public class HttpServer {
                     }
                 }
                 continue;
-            } finally {
-                if (sock != null) {
-                    try {
-                        sock.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
             }
+        }
+        
+        try {
+            serverSock.close();
+            sock.close();
+            is.close();
+            os.close();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
     }
 }

@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
+ * reference from: http://www.cnblogs.com/bigdataZJ/p/TomcatSourceZJ2.html
+ * 
  * a simple http get request<br>
  */
 public class HttpGetRequest {
