@@ -21,15 +21,19 @@ public class HttpGetRequest {
     
     /**
      * parse the uri in 1st line of http get request<br>
-     * just get the url without param
+     * just get the url without param<br>
+     * use BufferedReader.ready() to decide if a socket stream at end(not reliable)
      */
     public void parse() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
         StringBuilder requestString = new StringBuilder();
-        char[] buf = new char[2048];
-        if (br.read(buf) != -1) {
-            requestString.append(buf);
-        }
+        char[] buf = new char[8];
+        do {
+            if (br.read(buf) != -1) {
+                requestString.append(buf);
+            }
+            
+        } while (br.ready());
         uri = getUriWithoutParam(requestString.toString());
     }
     
