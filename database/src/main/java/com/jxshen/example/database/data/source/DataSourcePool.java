@@ -105,10 +105,11 @@ public class DataSourcePool implements DataSource {
         return proxyConn;
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         DataSourcePool pool = DataSourcePool.getInstance();
         Connection conn = pool.getConnection();
         System.out.println(conn);
+        conn.close();
         pool.release();
     }
     
