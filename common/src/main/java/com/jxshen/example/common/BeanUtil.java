@@ -1,6 +1,7 @@
 package com.jxshen.example.common;
 
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,17 +16,16 @@ public class BeanUtil {
         Map<String, Method> getterMap = new HashMap<String, Method>();
         Map<String, Method> setterMap = new HashMap<String, Method>();
         for (Method method : methods) {
-            if (method.getName().startsWith("get")) {
-                method.setAccessible(true);
-                getterMap.put(method.getName().substring(3), method);
-            }
-            if (method.getName().startsWith("is")) {
-                method.setAccessible(true);
-                getterMap.put(method.getName().substring(2), method);
-            }
-            if (method.getName().startsWith("set")) {
-                method.setAccessible(true);
-                setterMap.put(method.getName().substring(3), method);
+            if (Modifier.isPublic(method.getModifiers())) {
+                if (method.getName().startsWith("get")) {
+                    getterMap.put(method.getName().substring(3), method);
+                }
+                if (method.getName().startsWith("is")) {
+                    getterMap.put(method.getName().substring(2), method);
+                }
+                if (method.getName().startsWith("set")) {
+                    setterMap.put(method.getName().substring(3), method);
+                }
             }
         }
         
