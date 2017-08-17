@@ -32,7 +32,9 @@ public class BeanUtil {
         for (Map.Entry<String, Method> entry : setterMap.entrySet()) {
             String propertyName = entry.getKey();
             Method getterMethod = getterMap.get(propertyName);
+            System.out.println(String.format("getterMethod[%s] accessible is[%b]", getterMethod.getName(), getterMethod.isAccessible()));
             Method setterMethod = entry.getValue();
+            System.out.println(String.format("setterMethod[%s] accessible is[%b]", setterMethod.getName(), setterMethod.isAccessible()));
             setterMethod.invoke(to, getterMethod.invoke(from, new Object[]{}));
         }
     }
@@ -41,7 +43,7 @@ public class BeanUtil {
         PropertyObject from = new PropertyObject();
         from.setName("test");
         from.setAge(19);
-        from.setMan(false);
+        from.setMan(true);
         PropertyObject to = new PropertyObject();
         copyProperties(from, to);
         System.out.println(to);
