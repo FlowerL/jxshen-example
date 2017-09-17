@@ -4,5 +4,7 @@
 .classpath
 /build/
 /WebContent/
-/.idea/
+.idea
+*.iws
 *.iml
+*.ipr
