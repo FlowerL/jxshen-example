@@ -23,6 +23,7 @@
         <module>mock</module>
         <module>lambda</module>
         <module>spring-boot</module>
+        <module>jdk</module>
     </modules>
 	
 	<properties>
