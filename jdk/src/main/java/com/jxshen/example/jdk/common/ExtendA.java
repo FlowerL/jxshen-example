@@ -1,4 +1,4 @@
-package com.jxshen.example.jdk.extend;
+package com.jxshen.example.jdk.common;
 
 public class ExtendA extends AbstractA {
 

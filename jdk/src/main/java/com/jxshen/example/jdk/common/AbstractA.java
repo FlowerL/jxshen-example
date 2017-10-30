@@ -1,6 +1,6 @@
-package com.jxshen.example.jdk.extend;
+package com.jxshen.example.jdk.common;
 
-public class AbstractA implements InterfA {
+public abstract class AbstractA implements InterfA {
     @Override
     public void execute() {
         System.out.println(this.getClass().getSimpleName());
