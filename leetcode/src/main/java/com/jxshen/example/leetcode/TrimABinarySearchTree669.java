@@ -21,14 +21,16 @@ public class TrimABinarySearchTree669 {
         root.right = trimBST(root.right, L ,R);
         return root;
     }
-}
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    private static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-    public TreeNode(int val) {
-        this.val = val;
+        public TreeNode(int val) {
+            this.val = val;
+        }
     }
 }
+
+
