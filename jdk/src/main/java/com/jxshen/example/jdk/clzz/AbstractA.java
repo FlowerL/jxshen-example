@@ -1,4 +1,4 @@
-package com.jxshen.example.jdk.common;
+package com.jxshen.example.jdk.clzz;
 
 public abstract class AbstractA implements InterfA {
 
