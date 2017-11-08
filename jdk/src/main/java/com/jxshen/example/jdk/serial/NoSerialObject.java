@@ -1,4 +1,4 @@
-package com.jxshen.exanple.jdk.serial;
+package com.jxshen.example.jdk.serial;
 
 /**
  * 没有实现Serilizable的Object的序列化测试

@@ -1,4 +1,4 @@
-package com.jxshen.exanple.jdk.serial;
+package com.jxshen.example.jdk.serial;
 
 import java.io.*;
 
