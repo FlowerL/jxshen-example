@@ -24,6 +24,7 @@
         <module>lambda</module>
         <module>spring-boot</module>
         <module>jdk</module>
+        <module>tomcat</module>
     </modules>
 	
 	<properties>
