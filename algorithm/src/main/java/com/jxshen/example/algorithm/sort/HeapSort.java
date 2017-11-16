@@ -3,7 +3,7 @@ package com.jxshen.example.algorithm.sort;
 public class HeapSort {
 
     public static void main(String[] args) {
-        int[] array = {2,1,10,2,-1,7,4,78,-100};
+        int[] array = {4,3,2,1};
         maxHeapSort(array);
         for (int i : array) {
             System.out.print(i + " ");
