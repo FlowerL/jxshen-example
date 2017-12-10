@@ -1,4 +1,4 @@
-package com.jxshen.exanple.jdk.common;
+package com.jxshen.example.jdk.common;
 
 public class ReturnPlusTest {
     private static int a = 1;
