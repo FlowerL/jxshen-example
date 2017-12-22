@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jxshen.example</groupId>
 	<artifactId>jxshen-example</artifactId>
-	<version>${jxshen-example.version}</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<modules>
@@ -25,6 +25,8 @@
         <module>spring-boot</module>
         <module>jdk</module>
         <module>tomcat</module>
+        <module>proxy</module>
+        <module>jdk-test</module>
     </modules>
 	
 	<properties>
@@ -123,6 +125,11 @@
                 <artifactId>lombok</artifactId>
                 <version>1.16.18</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>3.2.5</version>
             </dependency>
 			<dependency>
 				<groupId>junit</groupId>

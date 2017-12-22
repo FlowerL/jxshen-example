@@ -1,11 +1,6 @@
 package com.jxshen.example.algorithm.sort;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * 基数排序，对输入的String统一按ASCII码从小到大排序
@@ -14,6 +9,99 @@ import java.util.TreeMap;
  *
  */
 public class RadixSort {
+
+//    public static int[] sortInteger(int[] nums) {
+//        if (nums == null || nums.length < 1) {
+//            return new int[0];
+//        }
+//
+//        List<Integer> listNums = intArray2List(nums, LinkedList.class);
+//        List<int[]> listSpitNums = splitInt(listNums);
+//
+//        // 求最大位数
+//        int maxRadix = 0;
+//        for (int i = 0; i < nums.length; i++) {
+//            int radix = calRadix(nums[i]);
+//            maxRadix = maxRadix < radix ? radix : maxRadix;
+//        }
+//
+//        Map<Integer, List<Integer>> buckets = new TreeMap<>();
+//    }
+
+//    public static List<int[]> splitInt(List<Integer> list, Class<? extends List> clzz) {
+//
+//    }
+
+    public static List<Integer> intArray2List(int[] nums, Class<? extends List> clzz) {
+        List<Integer> res;
+        try {
+            res = clzz.newInstance();
+        } catch (Exception e) {
+            return Collections.EMPTY_LIST;
+        }
+
+        for (int num : nums) {
+            res.add(num);
+        }
+        return res;
+    }
+
+    public static int calRadix(int num) {
+        int res = 1;
+        while ((num /= 10) != 0) {
+            res++;
+        }
+        return res;
+    }
+
+
+    public static List<List<Integer>> splitInteger(List<Integer> src) {
+        List<List<Integer>> res = new LinkedList<>();
+        Iterator<Integer> iter = src.iterator();
+        while (iter.hasNext()) {
+            Integer srcInt = iter.next();
+            List<Integer> tmp = new LinkedList<>();
+            while (srcInt != 0) {
+                tmp.add(srcInt % 10);
+                srcInt /= 10;
+            }
+            reverse(tmp);
+            res.add(tmp);
+        }
+        return res;
+    }
+
+    public static void reverse(List<Integer> src) {
+        int i = 0, j = src.size() - 1;
+        while (i < j) {
+            swap(src, i++, j--);
+        }
+    }
+
+    public static void swap(List<Integer> list, int a, int b) {
+        int tmp = list.get(a);
+        list.set(a, list.get(b));
+        list.set(b, tmp);
+
+    }
+
+    public static List<String> itoa(List<Integer> list) {
+        List<String> res = new ArrayList<>();
+        for (Integer i : list) {
+            res.add(itoa(i));
+        }
+        return res;
+    }
+
+    public static String itoa(Integer n) {
+        StringBuilder sb = new StringBuilder();
+        int radix;
+        while ((radix = n % 10) != 0) {
+            sb.append(radix);
+            n /= 10;
+        }
+        return sb.reverse().toString();
+    }
 
     public static List<String> sort(List<String> source) {
         if (source == null || source.isEmpty()) {
@@ -80,5 +168,9 @@ public class RadixSort {
         source.add("H21");
         source.add("312");
         System.out.println(sort(source));
+
+        Integer n = 1234;
+        System.out.println(itoa(n));
+        System.out.println("123123".equals(null));
     }
 }

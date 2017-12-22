@@ -8,8 +8,7 @@
 	<parent>
 		<groupId>com.jxshen.example</groupId>
 		<artifactId>jxshen-example</artifactId>
-		<version>${jxshen-example.version}</version>
-	
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
 	<artifactId>nio</artifactId>
