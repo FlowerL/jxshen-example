@@ -90,6 +90,16 @@
 			    <artifactId>spring-core</artifactId>
 			    <version>4.3.7.RELEASE</version>
 			</dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>4.3.7.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspect</artifactId>
+                <version>4.3.7.RELEASE</version>
+            </dependency>
 			<!-- 数据库驱动 -->
 			<dependency>
                 <groupId>mysql</groupId>
