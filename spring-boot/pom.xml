@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.jxshen.example</groupId>
         <artifactId>jxshen-example</artifactId>
-        <version>${jxshen-example.version}</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -39,6 +39,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.dom4j</groupId>
+            <artifactId>dom4j</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
