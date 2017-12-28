@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.jxshen.example</groupId>
 		<artifactId>jxshen-example</artifactId>
-		<version>${jxshen-example.version}</version>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>mock</artifactId>
@@ -20,7 +20,15 @@
 		<dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
         </dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+		</dependency>
 	</dependencies>
 </project>
