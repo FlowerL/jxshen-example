@@ -1,11 +1,14 @@
 package com.jxshen.example.springboot;
 
 
+import org.springframework.beans.BeansException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -21,7 +24,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 //@EnableTransactionManagement
 @ComponentScan(basePackages="com.jxshen.example.springboot")
 @EnableAutoConfiguration
-public class Application extends SpringBootServletInitializer {
+public class Application extends SpringBootServletInitializer implements ApplicationContextAware {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -30,5 +33,13 @@ public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(Application.class, args);
+        System.out.println(ac.getBean("&myFactoryBean").getClass());
+    }
+
+    private static ApplicationContext ac;
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        ac = applicationContext;
     }
 }
