@@ -5,7 +5,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.jxshen.example.common.RandomUtil;
 import com.jxshen.example.concurrent.buffer.BoundedBuffer;
 
 /**
@@ -64,7 +63,7 @@ public class PutTakeTest {
                 for (int i = nTrials; i > 0; --i) {
                     bb.put(seed);
                     sum += seed;
-                    seed = RandomUtil.xorShift(seed);
+//                    seed = RandomUtil.xorShift(seed);
                 }
                 putSum.getAndAdd(sum);
                 barrier.await();
